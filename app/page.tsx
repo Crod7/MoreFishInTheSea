@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import Link from "next/link"
 
 export default function Home() {
   return (
     <div>
       <button className='button-box'>
-        Generate Fish
+        <Link href="/fish">Generate Fish</Link>
       </button>
     </div>
   )
