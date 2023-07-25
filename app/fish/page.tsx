@@ -31,7 +31,7 @@ export default async function UsersPage() {
 
                 return (
                     <>
-                        <Link href={`/fish/${randomFish.id}`}>
+                        <Link href={`/fish/${randomFish.name}`}>
                             <p key={randomFish.id}>
                                 {randomFish.name}
                             </p>

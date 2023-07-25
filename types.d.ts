@@ -1,4 +1,3 @@
-
 type Fish = {
     "id": number,
     "name": string,
