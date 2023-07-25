@@ -8,23 +8,18 @@ export const metadata: Metadata = {
 
 export default async function FishPage() {
     const fishData: Promise<Fish[]> = getAllFish()
-    let randomIndex = 0;
+
 
     const fishes = await fishData
 
-    function getRandomInt() {
-        randomIndex = Math.floor(Math.random() * 1100)
-        return Math.floor(Math.random() * 1100);
-      }
-    
 
     const content = (
         <section>
             <br />
             <div className='button-center'>
-                {getRandomInt()}
-                <button className='button-box'>
-                    <a href='https://more-fish-in-the-sea.vercel.app/fish'>
+
+                <button className='button-box' >
+                    <a href='/fish'>
                         Generate More Fish
                     </a>
                 </button>
@@ -33,8 +28,8 @@ export default async function FishPage() {
 
             <div  className='fish-select-page-layout'>
                 {Array.from({ length: 3 }).map((_, index) => {
-                    getRandomInt();
-                    const randomFish = fishes[randomIndex];
+                    const randomFish = fishes[Math.floor(Math.random() * 1100)];
+                    console.log(randomFish.id)
 
                     return (
                         <div key={randomFish.id}>
