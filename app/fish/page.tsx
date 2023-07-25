@@ -20,6 +20,7 @@ export default async function FishPage() {
         <section>
             <br />
             <div className='button-center'>
+                {getRandomInt()}
                 <button className='button-box'>
                     <a href='https://more-fish-in-the-sea.vercel.app/fish'>
                         Generate More Fish
