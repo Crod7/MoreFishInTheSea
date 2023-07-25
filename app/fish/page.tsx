@@ -19,32 +19,33 @@ export default async function UsersPage() {
     const content = (
         <section>
             <br />
-            <h2>
+            <div className='button-center'>
                 <button className='button-box'>
                     <a href='http://localhost:3000/fish'>
                         Generate More Fish
                     </a>
                 </button>
-            </h2>
+            </div>
             <br />
 
-            
-            {Array.from({ length: 3 }).map((_, index) => {
-                const randomIndex = getRandomInt();
-                const randomFish = fishes[randomIndex];
+            <div  className='fish-select-page-layout'>
+                {Array.from({ length: 3 }).map((_, index) => {
+                    const randomIndex = getRandomInt();
+                    const randomFish = fishes[randomIndex];
 
-                return (
-                    <>
-                        <Link href={`/fish/${randomFish.name}`}>
-                            <p key={randomFish.id}>
-                                {randomFish.name}
-                            </p>
-                            <img src={randomFish.img_src_set['2x']} alt='[[[ IMAGE NOT AVAIABLE ]]]' />
-                        </Link>
-                        <br />
-                    </>
-                )
-            })}
+                    return (
+                        <div>
+                            <Link href={`/fish/${randomFish.name}`}>
+                                <p key={randomFish.id}>
+                                    {randomFish.name}
+                                </p>
+                                <img className='image-small' src={randomFish.img_src_set['2x']} alt='[[[ IMAGE NOT AVAIABLE ]]]' />
+                            </Link>
+                            <br />
+                        </div>
+                    )
+                })}
+            </div>
             
 
         </section>
