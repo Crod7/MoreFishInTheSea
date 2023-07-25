@@ -21,7 +21,7 @@ export default async function UsersPage() {
             <br />
             <div className='button-center'>
                 <button className='button-box'>
-                    <a href='http://localhost:3000/fish'>
+                    <a href='https://more-fish-in-the-sea.vercel.app/fish'>
                         Generate More Fish
                     </a>
                 </button>
@@ -34,9 +34,9 @@ export default async function UsersPage() {
                     const randomFish = fishes[randomIndex];
 
                     return (
-                        <div>
+                        <div key={randomFish.id}>
                             <Link href={`/fish/${randomFish.name}`}>
-                                <p key={randomFish.id}>
+                                <p>
                                     {randomFish.name}
                                 </p>
                                 <img className='image-small' src={randomFish.img_src_set['2x']} alt='[[[ IMAGE NOT AVAIABLE ]]]' />
