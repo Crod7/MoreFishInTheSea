@@ -21,7 +21,6 @@ export async function generateMetadata({ params: { fishName } }: Params): Promis
 }
 
 export default async function FishPage({ params: { fishName } }: Params) {
-    const fishData: Promise<Fish> = getFish(fishName)
     const fishDetailsData: Promise<Fish[]> = getFish(fishName)
 
 
@@ -29,6 +28,8 @@ export default async function FishPage({ params: { fishName } }: Params) {
         <Suspense fallback={<h2>Loading...</h2>}>
             <FishDetails promise={fishDetailsData} />
         </Suspense>
+
+        
     );
 
 }

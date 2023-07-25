@@ -17,12 +17,29 @@
 }
 
 body {
-
+  padding: 8px;
+}
+@layer base {
+  .button-box {
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 2px;
+    padding: 2px;
+  }
+  .image-full {
+    width: 100vw;
+    max-width: 600px;
+  }
+  .details-page-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center; 
+    min-height: 100vh;
+  }
+  .name-text {
+    color: blue;
+    font-weight: bold;
+    font-size: 7vh;
+  }
 }
 
-.button-box {
-  color: rgb(0, 0, 0);
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 2px;
-  padding: 2px;
-}

@@ -20,7 +20,11 @@ export default async function UsersPage() {
         <section>
             <br />
             <h2>
-                <a href='http://localhost:3000/fish'>Generate more fishes</a>
+                <button className='button-box'>
+                    <a href='http://localhost:3000/fish'>
+                        Generate More Fish
+                    </a>
+                </button>
             </h2>
             <br />
 
