@@ -18,13 +18,12 @@ export default async function UsersPage() {
 
     const content = (
         <section>
+            <br />
             <h2>
-                <Link href="/">Back to Home</Link>
+                <a href='http://localhost:3000/fish'>Generate more fishes</a>
             </h2>
             <br />
-            <p>
-                {getRandomInt()}
-            </p>
+
             
             {Array.from({ length: 3 }).map((_, index) => {
                 const randomIndex = getRandomInt();
@@ -43,10 +42,7 @@ export default async function UsersPage() {
                 )
             })}
             
-            <h2>
-                <Link href="/">Generate More Fish</Link>
-            </h2>
-            <br />
+
         </section>
     )
 
