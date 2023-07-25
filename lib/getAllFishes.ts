@@ -1,5 +1,5 @@
 export default async function getAllFish() {
-    const randomQueryParam = `cacheBuster=${Math.random()}`;
+    const randomQueryParam = `cacheBuster=${Date.now()}`;
     const url = `https://fish-species.p.rapidapi.com/fish_api/fishes?${randomQueryParam}`;
     const options = {
         method: 'GET',

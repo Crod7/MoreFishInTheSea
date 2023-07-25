@@ -8,10 +8,12 @@ export const metadata: Metadata = {
 
 export default async function FishPage() {
     const fishData: Promise<Fish[]> = getAllFish()
+    let randomIndex = 0;
 
     const fishes = await fishData
 
     function getRandomInt() {
+        randomIndex = Math.floor(Math.random() * 1100)
         return Math.floor(Math.random() * 1100);
       }
     
@@ -31,7 +33,7 @@ export default async function FishPage() {
 
             <div  className='fish-select-page-layout'>
                 {Array.from({ length: 3 }).map((_, index) => {
-                    const randomIndex = getRandomInt();
+                    getRandomInt();
                     const randomFish = fishes[randomIndex];
 
                     return (
