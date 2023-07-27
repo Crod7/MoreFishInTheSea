@@ -1,6 +1,6 @@
 export default async function getFish(fishId: string) {
 
-    const url = `https://fish-species.p.rapidapi.com/fish_api/fish/${fishId}`;
+    const url = `https://fish-species.p.rapidapi.com/fish_api${fishId}`;
     const options = {
         method: 'GET',
         headers: {

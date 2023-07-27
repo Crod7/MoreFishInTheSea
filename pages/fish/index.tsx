@@ -2,10 +2,17 @@ import React, { useEffect, useState } from 'react';
 import getAllFish from '@/lib/getAllFishes';
 import Link from 'next/link';
 
+type Fish = {
+    name: string;
+    img_src_set: {
+      '2x': string;
+    };
+  };
+
 export default function Index() {
-  const [randFish1, setRandFish1] = useState(null);
-  const [randFish2, setRandFish2] = useState(null);
-  const [randFish3, setRandFish3] = useState(null);
+    const [randFish1, setRandFish1] = useState<Fish | null>(null);
+    const [randFish2, setRandFish2] = useState<Fish | null>(null);
+    const [randFish3, setRandFish3] = useState<Fish | null>(null);
 
 
   const fetchData = async () => {

@@ -10,12 +10,13 @@ export default function Profile() {
 
   if (user) {
     console.log(user);
+    const pictureSrc = user.picture ?? 'none';
     return (
       <div>
         <h2>{user.name}</h2>
         <p>{user.email}</p>
-        <a href="/api/auth/logout">Logout</a>
-        <img src={user.picture} alt='none' />
+        <Link href="/api/auth/logout">Logout</Link>
+        <img src={pictureSrc} alt='none' />
         <Link href="/fish">
           Go to Fish Page
         </Link>
@@ -25,7 +26,7 @@ export default function Profile() {
 
   return (
     <div>
-      <a href="/api/auth/login">Login</a>
+      <Link href="/api/auth/login">Login</Link>
     </div>
   );
 }
