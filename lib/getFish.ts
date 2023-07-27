@@ -4,7 +4,7 @@ export default async function getFish(fishId: string) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'fc8f10559amsh7d96aa4d765690fp1b200fjsnf920b668d518',
+            'X-RapidAPI-Key': '780991b9d1mshadf331fe55de633p192346jsnc27d771562d6',
             'X-RapidAPI-Host': 'fish-species.p.rapidapi.com'
         }
     };
