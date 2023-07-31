@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from "next/link";
 import axios from 'axios';
+import User from '../models/UserModel';
+import connectMongoDB from "@/lib/MongoConnect";
+
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
 
+  
   // Used for user registration if not in database
   const registerUser = async () => {
     try {
@@ -15,8 +19,7 @@ export default function Profile() {
         given_name: user?.given_name,
         picture: user?.picture,
       }
-
-      const response = await axios.post('/api/set_user', { user: userData })
+      const registerResponse = await axios.post('/api/user/set_user', { user: userData })
     }catch(err){
       console.log(err);
     }
@@ -27,11 +30,9 @@ export default function Profile() {
   if (error) return <div>{error.message}</div>;
 
   if (user) {
-
     // If the user successfully logs in, we either create or verify that the user exists in the database with axios
     registerUser();
 
-    console.log(user);
     const pictureSrc = user.picture ?? 'none';
     return (
       <div>
