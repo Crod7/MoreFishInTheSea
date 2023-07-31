@@ -20,7 +20,6 @@ export default function Index() {
     setRandFish1(fishData[Math.floor(Math.random() * 1100)]);
     setRandFish2(fishData[Math.floor(Math.random() * 1100)]);
     setRandFish3(fishData[Math.floor(Math.random() * 1100)]);
-
   };
 
   useEffect(() => {

@@ -17,19 +17,19 @@ export default function Index() {
   const newUrl = currentUrl.replace(/ /g, "");
   const [fishData, setFishData] = useState<Fish[] | null>(null);
 
+  const fetchData = async () => {
 
+    const fetchFishData = await getFish(currentUrl);
+    console.log(fetchFishData)
+    setFishData(fetchFishData);
+
+
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
 
-      const fetchFishData = await getFish(currentUrl);
-      console.log(fetchFishData)
-      setFishData(fetchFishData);
-  
-  
-    };
     fetchData();
-  });
+  }, []);
 
   return (
     <div>
