@@ -15,21 +15,21 @@ export default function Index() {
   const router = useRouter();
   const currentUrl = router.asPath;
   const newUrl = currentUrl.replace(/ /g, "");
-  console.log(newUrl)
   const [fishData, setFishData] = useState<Fish[] | null>(null);
 
-  const fetchData = async () => {
 
-    const fetchFishData = await getFish(currentUrl);
-    console.log(fetchFishData)
-    setFishData(fetchFishData);
-
-
-  };
 
   useEffect(() => {
+    const fetchData = async () => {
+
+      const fetchFishData = await getFish(currentUrl);
+      console.log(fetchFishData)
+      setFishData(fetchFishData);
+  
+  
+    };
     fetchData();
-  }, []);
+  });
 
   return (
     <div>
