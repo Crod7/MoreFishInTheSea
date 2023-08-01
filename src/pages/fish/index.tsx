@@ -27,7 +27,9 @@ export default function Index() {
   }, []);
 
   return (
-    <div>
+    <div>          
+      <Link className='button-box' href="/fish">Generate More Fish</Link>
+
       {randFish1 && randFish2 && randFish3 ? (
         <div className='fish-select-page-layout'>
             <div>
